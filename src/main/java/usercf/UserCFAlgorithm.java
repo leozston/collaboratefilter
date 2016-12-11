@@ -113,7 +113,7 @@ public class UserCFAlgorithm {
         int number = 0;
         int index = 0;
         while (index < array.length && number < TOP_N){
-            if (index == userId) {
+            if (sortSimilarClasses.get(index).getIndex() == userId) {
                 index++;
             } else {
                 list.add(sortSimilarClasses.get(index).getIndex());
@@ -147,12 +147,19 @@ public class UserCFAlgorithm {
 
         public int compareTo(Object o) {
             SortSimilarClass sortSimilarClass = (SortSimilarClass)o;
-            return this.similar - sortSimilarClass.similar > 0 ? 1 : 0;
+            return this.similar > sortSimilarClass.similar ? -1 : 1;
         }
     }
 
     public static void main(String[] args) {
         UserCFAlgorithm userCFAlgorithm = new UserCFAlgorithm();
         Map<String, List<Pair<Integer, Float>>> result = userCFAlgorithm.recommondBasedOnUser();
+        System.out.println("输出:");
+        for (Map.Entry<String, List<Pair<Integer, Float>>> entry : result.entrySet()) {
+            System.out.println("用户:" + entry.getKey());
+            for (Pair<Integer, Float> pair : entry.getValue()) {
+                System.out.println("推荐物品 " + pair.getKey() + " 程度是:" + pair.getValue());
+            }
+        }
     }
 }

@@ -48,6 +48,12 @@ public class UserCFUtils {
             return similarMatrix;
         }
 
+        for (int i = 0; i < resource.size(); i++) {
+            for (int j = 0; j < resource.size(); j++) {
+                similarMatrix[i][j] = 0f;
+            }
+        }
+
         for (Map.Entry<Integer, List<String>> entry : itemToUserMap.entrySet()) {
             List<String> userList = entry.getValue();
 
@@ -65,6 +71,7 @@ public class UserCFUtils {
         for (int i = 0; i < resource.size(); i++) {
             for (int j = i + 1; j < resource.size(); j++) {
                 similarMatrix[i][j] = getSimilarity(similarMatrix[i][j], i, j, idToUsersMap, resource);
+                similarMatrix[j][i] = similarMatrix[i][j];
             }
         }
 
