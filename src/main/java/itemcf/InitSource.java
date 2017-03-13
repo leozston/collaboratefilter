@@ -1,4 +1,4 @@
-package mysrc;
+package itemcf;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by leoz on 2016/12/11.
+ * Created by leoz on 2017/3/13.
  */
 public class InitSource {
     /**
@@ -23,6 +23,7 @@ public class InitSource {
 
         return source;
     }
+
 
     /**
      *初始化user-->id的map
@@ -49,4 +50,5 @@ public class InitSource {
         idToUsersMap.put(4, "user_5");
         return idToUsersMap;
     }
+
 }
