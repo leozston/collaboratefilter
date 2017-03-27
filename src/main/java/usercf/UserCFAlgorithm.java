@@ -148,7 +148,10 @@ public class UserCFAlgorithm {
             SortSimilarClass sortSimilarClass = (SortSimilarClass)o;
             return this.similar > sortSimilarClass.similar ? -1 : 1;
         }
+
+
     }
+
 
     public static void main(String[] args) {
         UserCFAlgorithm userCFAlgorithm = new UserCFAlgorithm();
