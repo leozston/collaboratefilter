@@ -147,12 +147,7 @@ public class UserCFAlgorithm {
         public int compareTo(Object o) {
             SortSimilarClass sortSimilarClass = (SortSimilarClass)o;
             return this.similar > sortSimilarClass.similar ? -1 : 1;
-        }
-
-
-
-
-
+        }  
     }
 
 
